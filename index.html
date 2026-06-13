@@ -8,30 +8,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --void:#050508;--space:#0a0a14;--nebula:#0f0a1e;--card-bg:#12101f;
-  --royal:#5b1fa8;--violet:#7c3aed;--lavender:#a78bfa;
-  --gold:#c9a84c;--gold-bright:#e8c97e;--gold-pale:#f5e6c0;
-  --gold-glow:rgba(201,168,76,.15);--gold-border:rgba(201,168,76,.25);
-  --white:#faf8ff;--off-white:#e8e4f5;--muted:#8880aa;--text-dark:#1a0a2e;
-  --border:rgba(255,255,255,.07);
+  --void:#fdfaf6;--space:#f7f3ee;--nebula:#f2edf8;--card-bg:#ffffff;
+  --royal:#7c4fbe;--violet:#9b72d0;--lavender:#c4a8e8;
+  --gold:#b8913a;--gold-bright:#d4a84b;--gold-pale:#7a5c1e;
+  --gold-glow:rgba(184,145,58,.1);--gold-border:rgba(184,145,58,.28);
+  --white:#2d1f4e;--off-white:#3d2f5e;--muted:#8878a8;--text-dark:#fdfaf6;
+  --border:rgba(124,79,190,.1);
   --ff-d:'Marcellus',serif;--ff-u:'Raleway',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--void);color:var(--white);font-family:var(--ff-u);overflow-x:hidden}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--void)}::-webkit-scrollbar-thumb{background:var(--gold)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#f0ebe2}::-webkit-scrollbar-thumb{background:var(--gold)}
 
 @keyframes twinkle{0%,100%{opacity:.8}50%{opacity:.15}}
 @keyframes float-up{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.8}90%{opacity:.3}100%{transform:translateY(-100vh) translateX(15px);opacity:0}}
 @keyframes zone-pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.8);opacity:0}}
 @keyframes line-draw{from{stroke-dashoffset:300}to{stroke-dashoffset:0}}
 @keyframes fade-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes glow-breathe{0%,100%{box-shadow:0 0 20px rgba(201,168,76,.2)}50%{box-shadow:0 0 50px rgba(201,168,76,.45)}}
+@keyframes glow-breathe{0%,100%{box-shadow:0 4px 24px rgba(184,145,58,.15)}50%{box-shadow:0 8px 48px rgba(184,145,58,.35)}}
 @keyframes spin-orbit{from{transform:rotate(0deg) translateX(55px) rotate(0deg)}to{transform:rotate(360deg) translateX(55px) rotate(-360deg)}}
 @keyframes nav-reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4%;display:flex;align-items:center;justify-content:space-between;transition:background .4s,backdrop-filter .4s;animation:nav-reveal .6s ease forwards}
-nav.scrolled{background:rgba(5,5,8,.96);backdrop-filter:blur(24px);border-bottom:1px solid var(--gold-border)}
+nav.scrolled{background:rgba(253,250,246,.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--gold-border)}
 .nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
 .nav-logo svg{width:32px;height:42px;flex-shrink:0}
 .nav-brand{font-family:var(--ff-d);font-size:1.1rem;color:var(--white);letter-spacing:.04em}
@@ -47,13 +47,13 @@ nav.scrolled{background:rgba(5,5,8,.96);backdrop-filter:blur(24px);border-bottom
 .btn-book:hover{opacity:.88;transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
 .hamburger span{width:24px;height:1.5px;background:var(--gold);display:block}
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(5,5,8,.98);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(253,250,246,.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:var(--ff-d);font-size:2rem;color:var(--white);text-decoration:none}
 .mobile-menu .close-btn{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:var(--gold);font-size:1.8rem;cursor:pointer}
 
-.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;align-items:center;padding:6rem 4% 3rem;background:radial-gradient(ellipse at 70% 50%,rgba(92,31,168,.22),transparent 60%),radial-gradient(ellipse at 15% 80%,rgba(201,168,76,.07),transparent 50%),var(--void);position:relative;overflow:hidden}
-.dust{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;pointer-events:none;bottom:0}
+.hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;align-items:center;padding:6rem 4% 3rem;background:radial-gradient(ellipse at 70% 40%,rgba(196,168,232,.28),transparent 60%),radial-gradient(ellipse at 10% 80%,rgba(184,145,58,.08),transparent 50%),linear-gradient(160deg,#fdfaf6 0%,#f7f2fc 60%,#f5eee8 100%);position:relative;overflow:hidden}
+.dust{position:absolute;width:2px;height:2px;background:var(--gold-bright);border-radius:50%;pointer-events:none;bottom:0;opacity:.5}
 .hero-content{position:relative;z-index:2;animation:fade-rise .9s ease forwards}
 .hero-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
 .hero-h1{font-family:var(--ff-d);font-size:clamp(3.2rem,7vw,7.5rem);line-height:1;margin-bottom:1.4rem;color:var(--white)}
@@ -69,17 +69,24 @@ nav.scrolled{background:rgba(5,5,8,.96);backdrop-filter:blur(24px);border-bottom
 .pill svg{width:14px;height:14px;flex-shrink:0}
 .hero-illustration{position:relative;z-index:2;display:flex;justify-content:center;align-items:center}
 .hero-illustration svg{width:100%;max-width:420px;height:auto}
+.nails-frame{position:relative;width:100%;max-width:440px}
+.nails-frame::before{content:'';position:absolute;inset:-10px;border:1px solid var(--gold-border);pointer-events:none;z-index:1}
+.nails-frame::after{content:'';position:absolute;inset:-20px;border:1px solid rgba(184,145,58,.1);pointer-events:none;z-index:1}
+.nails-img{width:100%;height:520px;object-fit:cover;object-position:center;display:block;filter:saturate(1.05) brightness(1.02)}
+.nails-fallback{display:none;width:100%;height:520px;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0e8f8,#fdf5e8)}
+.nails-corner{position:absolute;width:20px;height:20px;border-color:var(--gold);border-style:solid;z-index:2}
+
 
 .section-label{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
 .section-title{font-family:var(--ff-d);font-size:clamp(2rem,4vw,3.5rem);color:var(--white);line-height:1.15;margin-bottom:1rem}
 .section-sub{font-size:.95rem;font-weight:300;color:var(--muted);line-height:1.7;max-width:560px}
 
-.aesthetics{padding:6rem 4%;background:var(--nebula);clip-path:polygon(0 3%,100% 0,100% 100%,0 100%)}
+.aesthetics{padding:6rem 4%;background:linear-gradient(160deg,#f9f5ff,#fdf8f2);clip-path:polygon(0 3%,100% 0,100% 100%,0 100%)}
 .aesthetics-grid{display:flex;gap:1.5rem;margin-top:3.5rem;overflow-x:auto;padding-bottom:1rem}
 .aesthetics-grid::-webkit-scrollbar{height:2px}
 .aesthetics-grid::-webkit-scrollbar-thumb{background:var(--gold)}
-.a-card{background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--gold-border);border-radius:2px;padding:2.2rem 1.8rem;min-width:220px;flex:1;transition:transform .4s cubic-bezier(.4,0,.2,1),border-color .4s,box-shadow .4s;position:relative}
-.a-card:hover{transform:translateY(-10px);border-color:var(--gold);box-shadow:0 0 30px rgba(201,168,76,.25)}
+.a-card{background:#ffffff;border:1px solid var(--gold-border);border-radius:2px;padding:2.2rem 1.8rem;min-width:220px;flex:1;transition:transform .4s cubic-bezier(.4,0,.2,1),border-color .4s,box-shadow .4s;position:relative;box-shadow:0 4px 24px rgba(124,79,190,.06)}
+.a-card:hover{transform:translateY(-10px);border-color:var(--gold);box-shadow:0 8px 40px rgba(184,145,58,.18)}
 .a-card.featured{border-color:var(--gold);min-width:260px;animation:glow-breathe 3s ease infinite}
 .a-card .badge{position:absolute;top:1rem;right:1rem;font-size:.65rem;font-weight:700;letter-spacing:.15em;color:var(--text-dark);background:var(--gold);padding:.2rem .6rem}
 .a-card svg{width:64px;height:64px;margin-bottom:1.4rem}
@@ -87,7 +94,7 @@ nav.scrolled{background:rgba(5,5,8,.96);backdrop-filter:blur(24px);border-bottom
 .a-card p{font-size:.82rem;font-weight:300;color:var(--muted);line-height:1.6;margin-bottom:1rem}
 .a-card .price{font-size:.9rem;font-weight:700;color:var(--gold)}
 
-.pricing{padding:6rem 4%;background:var(--space);display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
+.pricing{padding:6rem 4%;background:#fdfaf6;display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
 .crown-col svg{width:100%;max-width:300px}
 .accordion{width:100%}
 .acc-item{border-bottom:1px solid var(--border);overflow:hidden}
@@ -118,7 +125,7 @@ nav.scrolled{background:rgba(5,5,8,.96);backdrop-filter:blur(24px);border-bottom
 .orbit-ring{position:absolute;inset:0;border:1px solid rgba(26,10,46,.2);border-radius:50%}
 .orbit-dot{width:8px;height:8px;background:var(--text-dark);border-radius:50%;opacity:.35;position:absolute;top:50%;left:50%;transform-origin:0 0;animation:spin-orbit 5s linear infinite}
 
-.insta{padding:6rem 4%;background:var(--nebula);text-align:center}
+.insta{padding:6rem 4%;background:linear-gradient(160deg,#f9f5ff,#fdf8f2);text-align:center}
 .insta-header{margin-bottom:3rem}
 .constellation-wrap{position:relative;width:100%;max-width:800px;margin:0 auto 2rem;height:420px}
 .constellation-wrap svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
@@ -130,14 +137,15 @@ nav.scrolled{background:rgba(5,5,8,.96);backdrop-filter:blur(24px);border-bottom
 .insta-follow{font-size:.88rem;color:var(--muted);margin-top:1rem}
 .insta-follow a{color:var(--gold);text-decoration:none}
 
-.booking{padding:8rem 4%;background:var(--void);text-align:center;position:relative;overflow:hidden}
+.booking{padding:8rem 4%;background:linear-gradient(135deg,#2d1a50,#1a0a38);text-align:center;position:relative;overflow:hidden}
 .booking-bg{position:absolute;inset:0;pointer-events:none}
 .booking-content{position:relative;z-index:2}
-.booking .section-title{font-size:clamp(2.5rem,5vw,5rem);margin-bottom:1.2rem}
-.booking-address{font-size:.88rem;color:var(--muted);margin-bottom:2.5rem}
+.booking .section-title{font-size:clamp(2.5rem,5vw,5rem);margin-bottom:1.2rem;color:#fdfaf6}
+.booking .section-label{color:var(--gold-bright)}
+.booking-address{font-size:.88rem;color:rgba(253,250,246,.6);margin-bottom:2.5rem}
 .booking-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-footer{border-top:1px solid;border-image:linear-gradient(90deg,transparent,var(--gold),transparent) 1;padding:3rem 4%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;background:var(--void)}
+footer{border-top:1px solid;border-image:linear-gradient(90deg,transparent,var(--gold),transparent) 1;padding:3rem 4%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;background:#f7f3ee}
 .footer-brand{display:flex;align-items:center;gap:.7rem}
 .footer-brand svg{width:28px;height:36px}
 .footer-name{font-family:var(--ff-d);font-size:1rem;color:var(--white)}
@@ -256,9 +264,12 @@ footer{border-top:1px solid;border-image:linear-gradient(90deg,transparent,var(-
     </div>
   </div>
 
-  <!-- CONSTELLATION FACE -->
+  <!-- NAILS PHOTO -->
   <div class="hero-illustration">
-    <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg" id="face-svg">
+    <div class="nails-frame">
+      <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&q=85&auto=format&fit=crop" alt="Luxury nail art" class="nails-img" onerror="this.style.display='none';this.parentElement.querySelector('.nails-fallback').style.display='flex'"/>
+      <div class="nails-fallback">
+        <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg" id="face-svg">
       <defs>
         <radialGradient id="faceGlow" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="rgba(92,31,168,0.15)"/>
@@ -388,7 +399,9 @@ footer{border-top:1px solid;border-image:linear-gradient(90deg,transparent,var(-
         <circle cx="25" cy="3" r="2.5" fill="#c9a84c"/>
         <circle cx="45" cy="8" r="2.5" fill="#c9a84c"/>
       </g>
-    </svg>
+        </svg>
+      </div>
+    </div>
   </div>
 </section>
 
